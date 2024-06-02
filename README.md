@@ -1,0 +1,1 @@
+Testing the library lib-simple-inject in separate modules.
