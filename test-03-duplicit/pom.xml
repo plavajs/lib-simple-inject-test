@@ -9,8 +9,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>com.plavajs.libs.simpleinject</groupId>
-    <artifactId>test-01-general</artifactId>
+    <artifactId>test-03-duplicit</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

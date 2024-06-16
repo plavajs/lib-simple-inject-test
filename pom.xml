@@ -12,6 +12,7 @@
     <modules>
         <module>test-01-general</module>
         <module>test-02-cyclic</module>
+        <module>test-03-duplicit</module>
     </modules>
 
     <properties>
