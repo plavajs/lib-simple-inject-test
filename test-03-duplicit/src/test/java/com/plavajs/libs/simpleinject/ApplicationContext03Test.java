@@ -1,19 +1,53 @@
 package com.plavajs.libs.simpleinject;
 
-import com.plavajs.libs.simpleinject.c.C1;
+import com.plavajs.libs.simpleinject.a.*;
+import com.plavajs.libs.simpleinject.b.*;
+import com.plavajs.libs.simpleinject.c.*;
+import com.plavajs.libs.simpleinject.d.*;
 import com.plavajs.libs.simpleinject.exception.DuplicitBeansException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ApplicationContext03Test {
-    
+
     @Test
-    void c1_throws() {
-        try {
-            ApplicationContext.getInstance(C1.class);
-        } catch (ExceptionInInitializerError e) {
-            assertEquals(DuplicitBeansException.class, e.getCause().getClass());
-        }
+    void a_components_throws() {
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(A1.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(A1.class, "simple-bean-A1"));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(A2.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(A3.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(A4.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(A5.class));
+    }
+
+    @Test
+    void b_injects_throws() {
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(B1.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(B1.class, "simple-bean-B1"));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(B2.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(B3.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(B4.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(B5.class));
+    }
+
+    @Test
+    void c_componentsInjects_throws() {
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C1.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C1.class, "simple-bean-C1"));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C2.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C3.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C4.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C5.class));
+    }
+
+    @Test
+    void d_componentsInjects_throws() {
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D1.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D1.class, "simple-bean-D1"));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D2.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D3.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D4.class));
+        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D5.class));
     }
 }

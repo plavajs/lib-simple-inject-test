@@ -11,7 +11,7 @@ import com.plavajs.libs.simpleinject.d.D1;
 
 @SimpleConfiguration
 @SimpleComponentScan(packages = "com.plavajs.libs.simpleinject")
-public class Config03 {
+public class Config04 {
 
     @SimpleBean(identifier = "simple-bean-A1")
     public static A1 simpleBeanA1(A2 a2) {
