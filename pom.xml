@@ -14,7 +14,9 @@
         <module>test-02-cyclic</module>
         <module>test-03-duplicit</module>
         <module>test-04-missing-public-constructor</module>
-        <module>test-05-multiple-bean-constructor</module>
+        <module>test-05-multiple-bean-constructors</module>
+        <module>test-06-multiple-classes-annotated</module>
+        <module>test-07-multiple-constructors-none-bean-annotated</module>
     </modules>
 
     <properties>

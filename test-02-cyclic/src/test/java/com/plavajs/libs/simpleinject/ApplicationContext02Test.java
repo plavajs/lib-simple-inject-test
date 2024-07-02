@@ -4,6 +4,7 @@ import com.plavajs.libs.simpleinject.a.*;
 import com.plavajs.libs.simpleinject.b.*;
 import com.plavajs.libs.simpleinject.c.*;
 import com.plavajs.libs.simpleinject.d.*;
+import com.plavajs.libs.simpleinject.e.E1;
 import com.plavajs.libs.simpleinject.exception.CyclicDependencyException;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,6 +23,7 @@ class ApplicationContext02Test {
     @SuppressWarnings("unchecked")
     @BeforeAll
     static void setup() throws IllegalAccessException {
+        ApplicationContext.getInstance(E1.class);
         Field simpleBeansField = FieldUtils.getDeclaredField(ApplicationContext.class, "methodBeans", true);
         simpleBeansField.setAccessible(true);
         SIMPLE_BEANS = (Set<MethodBean>) simpleBeansField.get(null);
@@ -33,8 +35,12 @@ class ApplicationContext02Test {
     }
 
     private static void notEagerInstances() {
-        SIMPLE_BEANS.forEach(bean -> assertNull(bean.getInstance()));
-        COMPONENT_BEANS.forEach(bean -> assertNull(bean.getInstance()));
+        SIMPLE_BEANS.stream()
+                .filter(bean -> !bean.getType().equals(E1.class))
+                .forEach(bean -> assertNull(bean.getInstance()));
+        COMPONENT_BEANS.stream()
+                .filter(bean -> !bean.getType().equals(E1.class))
+                .forEach(bean -> assertNull(bean.getInstance()));
     }
     
     @Test

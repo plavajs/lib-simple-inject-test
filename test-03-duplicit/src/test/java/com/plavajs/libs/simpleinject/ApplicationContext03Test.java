@@ -3,7 +3,6 @@ package com.plavajs.libs.simpleinject;
 import com.plavajs.libs.simpleinject.a.*;
 import com.plavajs.libs.simpleinject.b.*;
 import com.plavajs.libs.simpleinject.c.*;
-import com.plavajs.libs.simpleinject.d.*;
 import com.plavajs.libs.simpleinject.exception.DuplicitBeansException;
 import org.junit.jupiter.api.Test;
 
@@ -39,15 +38,5 @@ class ApplicationContext03Test {
         assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C3.class));
         assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C4.class));
         assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(C5.class));
-    }
-
-    @Test
-    void d_componentsInjects_throws() {
-        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D1.class));
-        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D1.class, "simple-bean-D1"));
-        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D2.class));
-        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D3.class));
-        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D4.class));
-        assertThrows(DuplicitBeansException.class, () -> ApplicationContext.getInstance(D5.class));
     }
 }

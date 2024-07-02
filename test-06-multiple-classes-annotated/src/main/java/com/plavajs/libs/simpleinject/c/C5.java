@@ -1,10 +1,10 @@
-package com.plavajs.libs.simpleinject.d;
+package com.plavajs.libs.simpleinject.c;
 
 import com.plavajs.libs.simpleinject.annotation.SimpleComponent;
 import lombok.Getter;
 
 @Getter
 @SimpleComponent
-public class D5 {
+public class C5 {
 
 }

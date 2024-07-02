@@ -1,17 +1,16 @@
 package com.plavajs.libs.simpleinject.d;
 
+import com.plavajs.libs.simpleinject.annotation.SimpleBean;
 import com.plavajs.libs.simpleinject.annotation.SimpleComponent;
-import com.plavajs.libs.simpleinject.annotation.SimpleInject;
 import lombok.Getter;
 
 @Getter
 @SimpleComponent
-public class D4 {
+public class D5 {
 
-    @SimpleInject
-    private D5 d5;
+    public D5() { }
 
-    private D4() {
-
+    public D5(String hello) {
+        System.out.println(hello);
     }
 }
