@@ -13,6 +13,7 @@
         <module>test-01-general</module>
         <module>test-02-cyclic</module>
         <module>test-03-duplicit</module>
+        <module>test-04-missing-public-constructor</module>
     </modules>
 
     <properties>
@@ -37,6 +38,7 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
