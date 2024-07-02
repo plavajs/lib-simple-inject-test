@@ -8,6 +8,7 @@ import com.plavajs.libs.simpleinject.annotation.SimpleConfiguration;
 import com.plavajs.libs.simpleinject.b.B1;
 import com.plavajs.libs.simpleinject.c.C1;
 import com.plavajs.libs.simpleinject.d.D1;
+import com.plavajs.libs.simpleinject.e.E1;
 
 @SimpleConfiguration
 @SimpleComponentScan(packages = "com.plavajs.libs.simpleinject")
@@ -31,5 +32,10 @@ public class Config02 {
     @SimpleBean(identifier = "simple-bean-D1")
     public static D1 simpleBeanD1() {
         return new D1();
+    }
+
+    @SimpleBean(identifier = "simple-bean-E1")
+    public static E1 simpleBeanE1() {
+        return new E1();
     }
 }
