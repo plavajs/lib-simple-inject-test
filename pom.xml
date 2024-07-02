@@ -6,12 +6,17 @@
 
     <groupId>com.plavajs.libs</groupId>
     <artifactId>lib-simple-inject-test</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>test-01-general</module>
         <module>test-02-cyclic</module>
+        <module>test-03-duplicit</module>
+        <module>test-04-missing-public-constructor</module>
+        <module>test-05-multiple-bean-constructors</module>
+        <module>test-06-multiple-classes-annotated</module>
+        <module>test-07-multiple-constructors-none-bean-annotated</module>
     </modules>
 
     <properties>
@@ -19,7 +24,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <lib-simple-inject.version>1.0.5-SNAPSHOT</lib-simple-inject.version>
+        <lib-simple-inject.version>1.0.5</lib-simple-inject.version>
         <lombok.version>1.18.32</lombok.version>
     </properties>
 
@@ -36,6 +41,7 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
